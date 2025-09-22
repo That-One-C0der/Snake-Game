@@ -33,7 +33,7 @@ def drawsnake():
 def shiftsnake():
     snake.insert(0,(snake[0][0]+xdir,snake[0][1]+ydir))
     snake.pop()
-    if(snake[0][0]<0 or snake[0][0]>10 or snake[0][1]<0 or snake[0][1]>10):
+    if(snake[0][0]<0 or snake[0][0]>10 or snake[0][1]<0 or snake[0][1]>10 or snake[0] in snake[1:]):
         return False
     else:
         return True
@@ -84,4 +84,5 @@ while running:
         clockspeed = 3
         
     clock.tick(clockspeed)
+
 pygame.quit()
